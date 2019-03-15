@@ -1,0 +1,18 @@
+.itemMessage {
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 8px #ccc;
+    margin: 10px 5px;
+    border-radius: 5px;
+}
+.itemMessage h6 {
+    color: #0082dd;
+    font-weight: bold;
+    margin: 0;
+}
+.itemMessage p {
+    margin: 0;
+}
+.messageBlock {
+    /*border-right: 1px solid #ccc;*/
+}
