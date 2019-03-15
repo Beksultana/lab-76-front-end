@@ -8,7 +8,7 @@
 .itemMessage h6 {
     color: #0082dd;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 5px 0;
 }
 .itemMessage p {
     margin: 0;
