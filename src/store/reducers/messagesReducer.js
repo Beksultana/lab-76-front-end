@@ -1,7 +1,7 @@
 import {FETCH_MESSAGE_SUCCESS} from "../actions/messageTypeActions";
 
 const initialState = {
-    messages: []
+    messages: [],
 };
 
 const messageReducer = (state = initialState, action) => {

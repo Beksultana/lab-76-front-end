@@ -10,3 +10,11 @@ export const fetchMessage = () => {
         )
     };
 };
+
+export const postMessage = (messages) => {
+    return dispatch => {
+        return axios.post('/messages', messages).then(
+            () => {return dispatch(fetchMessage())}
+        )
+    }
+};

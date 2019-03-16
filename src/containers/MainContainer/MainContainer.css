@@ -1,9 +1,5 @@
 .itemMessage {
-    padding: 10px 30px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 8px #ccc;
-    margin: 10px 5px;
-    border-radius: 5px;
+    margin: 10px;
 }
 .itemMessage h6 {
     color: #0082dd;
@@ -14,5 +10,30 @@
     margin: 0;
 }
 .messageBlock {
-    /*border-right: 1px solid #ccc;*/
+    overflow: scroll;
+    height: 75vh;
+}
+header {
+    position: relative;
+    background: #009e6c;
+}
+header h1 {
+    text-align: center;
+    margin: 0;
+    color: #fff;
+}
+.formBlock {
+    margin-top: 2%;
+}
+footer {
+    background: #009e6c;
+    color: #eee;
+    margin: 0;
+    padding: 1px;
+}
+.form-control {
+    background: transparent;
+}
+.form-inline {
+    justify-content: space-between;
 }
