@@ -37,7 +37,7 @@ class MainContainer extends Component {
 
         const messages = this.props.messages.map(item => {
             return (
-                <Card  key={item.id} className="itemMessage">
+                <Card  outline color="success"  key={item.id} className="itemMessage">
                     <CardHeader color="info">{item.author}</CardHeader>
                     <CardBody>
                         <CardText>{item.message}</CardText>
