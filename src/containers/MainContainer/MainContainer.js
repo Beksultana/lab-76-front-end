@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import axios from '../../axios-messages';
 import {fetchMessage, postMessage} from "../../store/actions/messageSyncActions";
 import {connect} from "react-redux";
 import './MainContainer.css';
@@ -7,10 +8,8 @@ import {
     Card,
     CardBody,
     CardFooter,
-    CardGroup,
     CardHeader,
     CardText,
-    Col,
     Form,
     FormGroup,
     Input,
@@ -26,6 +25,28 @@ class MainContainer extends Component {
 
     componentDidMount() {
         this.props.getMessage()
+    };
+
+    shouldComponentUpdate(nextProps, nextState){
+        return this.props.messages.length !== nextProps.messages.length ||
+            this.state.author !== nextState.author ||
+            this.state.message !== nextState.message
+    }
+
+    componentDidUpdate() {
+        const lastDateTime = this.props.messages[this.props.messages.length - 1].date;
+
+        clearInterval(this.interval);
+        this.interval = setInterval(() => {
+            axios.get('http://localhost:9000/messages?datetime=' + lastDateTime)
+                .then(response => {
+                    const messages = response.data;
+                    [...this.props.messages].concat(messages);
+                }).catch(error => {
+                console.log(error);
+            });
+        }, 5000);
+
     };
 
     onChangeHandler = event => {
