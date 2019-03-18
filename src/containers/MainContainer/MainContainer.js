@@ -92,7 +92,7 @@ class MainContainer extends Component {
                 <div className="Container">
                     <div style={{}}>
                         <div className=" messageBlock">
-                            {messages}
+                            {messages.reverse()}
                         </div>
                     </div>
                 </div>
